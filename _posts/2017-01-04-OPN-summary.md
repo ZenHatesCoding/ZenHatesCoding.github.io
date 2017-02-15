@@ -9,6 +9,7 @@ tags: [ideas,optics]
 icon: icon-html
 ---
 
+* Context
 {: toc}
 
 
