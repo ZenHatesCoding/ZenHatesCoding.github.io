@@ -4,7 +4,7 @@ title:  "OPN summary Jan 2017"
 date:   2017-01-04
 desc: "Interesting researches reported in OPN Jan 17"
 keywords: "Meta-Optics,On-chip OCT,Freq-comb"
-categories: [HTML]
+categories: [Optics]
 tags: [ideas,optics]
 icon: icon-html
 ---
