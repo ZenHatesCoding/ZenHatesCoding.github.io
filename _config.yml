@@ -1,24 +1,24 @@
 # Welcome to Jekyll!
 
 # Website settings
-title: Jalpc
-description: Jack's blog,use Jekyll and github pages.
-keywords: Jack,Jalpc,blog,Jekyll,github,gh-pages
-baseurl:  /Jalpc # if you have suburl as homepage like '/homepage', please change it to '/homepage'
-url: http://jarrekk.github.io/Jalpc  # url should be changed to 'http://www.jack003.com/homepage' as before
+title: Dipole's Backyard
+description: ZP's blog, use Jekyll and github pages.
+keywords: blog,Jekyll,github
+baseurl:  /homepage # if you have suburl as homepage like '/homepage', please change it to '/homepage'
+url: http://zenhatescoding.github.io/homepage  # url should be changed to 'http://www.jack003.com/homepage' as before
 # url: http://127.0.0.1:4000
-img_path: /Jalpc/static/assets/img/blog  # url should be changed to '/homepage/static/assets/img/blog' as before
+img_path: /homepage/static/assets/img/blog  # url should be changed to '/homepage/static/assets/img/blog' as before
 
 # author -- index page "about me" section
 author:  # change following line to your infomation.
-  name: GitHub  # Be used at blog posts' author.
-  first_name: Hub  # Be used at index page about me section.
-  last_name: Git  # Be used at index page about me section.
-  cv: http://cv.jack003.com  # A online CV can be printed as PDF, leave blank if you don't have now
-  email: me@jack003.com  # Leave blank if you don't have now
-  facebook_username: jiakunnj  # Leave blank if you don't have now
-  github_username: jarrekk  # Leave blank if you don't have now
-  avatar: /static/assets/img/landing/avatar.jpg  # upload your avatar at directory and edit it.
+  name: ZP  # Be used at blog posts' author.
+  first_name: ZP  # Be used at index page about me section.
+  last_name: Xing  # Be used at index page about me section.
+  cv:   # A online CV can be printed as PDF, leave blank if you don't have now
+  email: sunwar@126.com  # Leave blank if you don't have now
+  facebook_username: Zhenping Xing  # Leave blank if you don't have now
+  github_username: ZenHatesCoding  # Leave blank if you don't have now
+  avatar: /static/assets/img/landing/Mimikyu_anime.png  # upload your avatar at directory and edit it.
   skill_icon1:
     - name: icon-apache
     - name: fa-linux
