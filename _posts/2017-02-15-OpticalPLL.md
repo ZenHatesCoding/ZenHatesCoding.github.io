@@ -4,7 +4,7 @@ title:  "Optical PLL"
 date:   2017-02-15
 desc: "principle of optical phase lock loop"
 keywords: "Phase Lock Loop"
-categories: [HTML]
+categories: [Optics]
 tags: [notes,optics]
 icon: icon-html
 ---
@@ -15,7 +15,7 @@ icon: icon-html
 ## OPLL Basics
 - Structure:
 
-  ![image](./image_post/OPLL.jpg)
+  ![image](static/assets/img/blog/OPLL0215/OPLL.jpg)
 
 - Free running SCL:  $a_s(cos(\omega_s^{fr}t+\phi_s^{fr}(t)))$
 - Master laser: $a_m(cos(\omega_mt+\phi_m(t)))$
