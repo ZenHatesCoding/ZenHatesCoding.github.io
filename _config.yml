@@ -4,17 +4,17 @@
 title: Dipole's Backyard
 description: ZP's blog, use Jekyll and github pages.
 keywords: blog,Jekyll,github
-baseurl:  /homepage # if you have suburl as homepage like '/homepage', please change it to '/homepage'
-url: http://zenhatescoding.github.io/homepage  # url should be changed to 'http://www.jack003.com/homepage' as before
+baseurl:   # if you have suburl as homepage like '/homepage', please change it to '/homepage'
+url: http://zenhatescoding.github.io  # url should be changed to 'http://www.jack003.com/homepage' as before
 # url: http://127.0.0.1:4000
-img_path: /homepage/static/assets/img/blog  # url should be changed to '/homepage/static/assets/img/blog' as before
+img_path: /static/assets/img/blog  # url should be changed to '/homepage/static/assets/img/blog' as before
 
 # author -- index page "about me" section
 author:  # change following line to your infomation.
-  name: ZP  # Be used at blog posts' author.
+  name: ZPX  # Be used at blog posts' author.
   first_name: ZP  # Be used at index page about me section.
   last_name: Xing  # Be used at index page about me section.
-  cv:   # A online CV can be printed as PDF, leave blank if you don't have now
+  cv: To be updated  # A online CV can be printed as PDF, leave blank if you don't have now
   email: sunwar@126.com  # Leave blank if you don't have now
   facebook_username: Zhenping Xing  # Leave blank if you don't have now
   github_username: ZenHatesCoding  # Leave blank if you don't have now
