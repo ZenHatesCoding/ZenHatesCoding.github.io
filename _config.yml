@@ -11,7 +11,7 @@ img_path: /static/assets/img/blog  # url should be changed to '/homepage/static/
 
 # author -- index page "about me" section
 author:  # change following line to your infomation.
-  name: ZPX  # Be used at blog posts' author.
+  name: ZenHatesCoding  # Be used at blog posts' author.
   first_name: ZP  # Be used at index page about me section.
   last_name: Xing  # Be used at index page about me section.
   cv: To be updated  # A online CV can be printed as PDF, leave blank if you don't have now
