@@ -293,3 +293,12 @@ There may be merge conflicts, so be sure to fix the files that git lists if they
 ## <a name="ad"></a>Ad
 [Jalpc-A](https://github.com/Jack614/Jalpc-A): another Jekyll theme written by [AngularJS](https://angularjs.org/).
 
+---
+## User Notes
+
+02/15/17
+1. To add a new blog category:
+   - add a new .html in /blog, the title and the permalink just need to be consistent with this .html
+   - edit /_data/blog.yml, be careful about /href/
+2. Edit about me 
+   - /static/locales/xx.json

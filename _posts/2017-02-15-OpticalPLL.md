@@ -15,7 +15,7 @@ icon: icon-html
 ## OPLL Basics
 - Structure:
 
-  ![image](static/assets/img/blog/OPLL0215/OPLL.jpg)
+  ![structure]({{ site.img_path }}/OPLL0215/OPLL.jpg)
 
 - Free running SCL:  $a_s(cos(\omega_s^{fr}t+\phi_s^{fr}(t)))$
 - Master laser: $a_m(cos(\omega_mt+\phi_m(t)))$
