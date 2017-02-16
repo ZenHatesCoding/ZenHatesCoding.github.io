@@ -20,8 +20,8 @@ author:  # change following line to your infomation.
   github_username: ZenHatesCoding  # Leave blank if you don't have now
   avatar: /static/assets/img/landing/Mimikyu_anime.png  # upload your avatar at directory and edit it.
   skill_icon1:
-    - name: icon-apache
-    - name: fa-linux
+    - name: icon-apache # font-mfizzed icon apache format: icon-xxx
+    - name: fa-linux # fontawesome icon linux format fa-xxx
   skill_icon2:
     - name: fa-linux
     - name: icon-apache
