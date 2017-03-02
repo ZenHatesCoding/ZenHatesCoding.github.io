@@ -34,6 +34,14 @@ icon: icon-apache
 - Ce:YIG
 - 32 dB for isolator, 11 dB for circulator
 
+## nonlinear optics in Si - usually use SiN
+
+[Effect of Muliphoton absorption on parametric comb generation in Si MR - Alex Columbia](https://www.osapublishing.org/ol/abstract.cfm?uri=ol-40-12-2778)
+
+- parametric oscillation may occur at **MIR** wavelengths, provided that the free-carrier lifetime is sufficiently short or the optical pump power is sufficiently low, 
+- inhibited at **telecom** wavelengths. 
+- an etchless, air-clad silicon microresonator that enables an octave-spanning frequency comb in a completely **passive** device.
+
 <style>
 .page-container {max-width: 1000px}
 </style>
