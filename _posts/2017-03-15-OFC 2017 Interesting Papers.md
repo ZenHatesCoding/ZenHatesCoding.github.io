@@ -70,9 +70,26 @@ icon: icon-apache
 - Lukas
 - in-resonator photoconductive heaters(IRPH)
     - n doped Si wg as PD
+        - DSA: defect state absorption
     - same contact pads for both heating and photocurrent measurements
-    - No need for PD 
+    - tunning Ring 1 to 4 sequentially to maximize the photocurrent in each ring's IRPH
+    - maximum search algorithm used to account for detuning of previous tuned ring due to thermal crosstalk
+    - calibration required to substract the heater current from I_total in order to obtain photocurrent
+    - can be used to estimate the heater power required to tune each ring -> reduce time required
+- coupling coefficients not tuned
+- can be used as temperature stabilization method
+- 40 degree celcius range
 - IME A*STAR
+
+### List of ideas
+- **Tu2I.3** Dual-COre Polarization diverse SiPh Add/Drop switch - 400G PDM+16QAM
+    - Huawei Canada
+    - X output of PSR connects to Y input of PRC to self-compensate for PDL and DGD in PSR PRC and FSC(fiber spacing concentrater)
+- **Tu2I.4** Full C band Nyquist-WDM interleaver
+    - Monash
+    - See their OE-16 paper for details
+    - RAMZI, sub GHz resolution, flat top
+        - _comparing to cascaded ring ?_
 
 ## Packaging
 
@@ -87,6 +104,7 @@ icon: icon-apache
 - matching oil required for packaging
 - future work
     - V groove + SSC for multichannel packaging
+
 
 ## Direct Dection
 
