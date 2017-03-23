@@ -13,7 +13,7 @@ icon: icon-apache
 {: toc}
 
 ---
-
+# Si Photonics
 ## Si-Ph Modulators
 ### Tu2H.1 High speed Silicon modulators
 - Wuhan Research Institute of Post & Telecom
@@ -106,8 +106,8 @@ icon: icon-apache
     - V groove + SSC for multichannel packaging
 
 
-## Direct Dection
-
+# Direct Dection
+## IMDD general
 ### Tu3I.3 DD solutions for 100G and beyond
 - ADVA Optical Networking Germany, DTU Denmark
 - IEEE 802.3bs 
@@ -157,8 +157,30 @@ icon: icon-apache
                     - non0linear **Volterra equalization** as a compensation algorithm [15 - ECOC2015] 
                     - 110 Gbps 100 km VSB-DMT
 
+## IMDD + SSB
+### Tu2D.5 Nonlinear Equalizaer for 112-Gb SSB-PAM4 in 80 km CD uncompensated link
+- Bell Labs - Noriaki Kaneda
+- IMDD + SSB + PD 
+    -  SSBN -> NL equalizer
+- Diff-drive MZM (30 GHz) -> SSB+Carrier generation
+- ADC -> Resample to 2 sps -> Clk recovery -> LMS-DD + NL eq.
+    - limit nonlinear terms to self-squared terms
+    - blindly adapted with no use of training symbols
+        - guide the convergence - first use amplitude directed blind eq simular to CMA
+        - then switch to  **LMS-DD**
+            - Decision directed gradient decent algorithm with LMS error function 
+    - can be implemented in Freq domain
+        - scales well if disp is high and # of linear and NL terms increase 
+    - an order of magnitude better in terms of BER comparing to Linear Eq only
+    - 96 taps for Linear part, 48 taps 
 
-##
+
+# Coherent Detection
+## Probability Shaping
+### M3C.1 Spectrally-Efficient Single-Carrier 400G Transmission with PS
+- Yanjun Zhu -Futurewei Tech, Santa Clara, USA
+- 
+
 
 
 
