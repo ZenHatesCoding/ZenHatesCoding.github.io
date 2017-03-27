@@ -174,6 +174,27 @@ icon: icon-apache
     - an order of magnitude better in terms of BER comparing to Linear Eq only
     - 96 taps for Linear part, 48 taps 
 
+### Tu3I.2 4x200 Gbs Twin-SSB Nyquist SCM WDM Transmission over 160 km SSMF with DD
+- Peking University, Yixiao Zhu
+- require OBPF(optical bandpass filter) at rx side
+- require 2 x hilbert transform at tx side to achieve twin ssb (for both LSB and RSB)
+- Rx side DSP
+    - Resampling
+    - SSBI cancellation
+        - use hilbert transform to estimate ssbi then substract the estimation from the signal
+        - require iterations
+    - down convert to baseband 
+    - RRC matched filter
+    - synchornization 
+    - Time-Domain equalization
+        - Ts/4 spaced training sequence
+        - recursive least square (RLS) algorithm
+    - Downsampling to 1 sps
+    - DD RLS
+    - post filter + MLSD
+        - 2 tap post filter
+        - to compensate for the equalization-enhanced in-band noise
+        
 
 # Coherent Detection
 ## Probability Shaping
