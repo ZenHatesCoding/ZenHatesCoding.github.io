@@ -81,8 +81,16 @@ icon: icon-apache
 - 40 degree celcius range
 - IME A*STAR
 
+
+### W2A.9 Compact 4x5 Gb/s SOI OFDM Tx
+- Monash, Yiwei Xie, Arthur James Lowery
+- 2.1x4.8 mm^2
+- 4 Mod + optical Fourier tranform
+- 5 GHz channel spacing, 80 GHz FSR
+- 8x8 AWG used
+
 ### List of ideas
-- **Tu2I.3** Dual-COre Polarization diverse SiPh Add/Drop switch - 400G PDM+16QAM
+- **Tu2I.3** Dual-Core Polarization diverse SiPh Add/Drop switch - 400G PDM+16QAM
     - Huawei Canada
     - X output of PSR connects to Y input of PRC to self-compensate for PDL and DGD in PSR PRC and FSC(fiber spacing concentrater)
 - **Tu2I.4** Full C band Nyquist-WDM interleaver
@@ -90,6 +98,7 @@ icon: icon-apache
     - See their OE-16 paper for details
     - RAMZI, sub GHz resolution, flat top
         - _comparing to cascaded ring ?_
+
 
 ## Packaging
 
@@ -105,7 +114,7 @@ icon: icon-apache
 - future work
     - V groove + SSC for multichannel packaging
 
-
+---
 # Direct Dection
 ## IMDD general
 ### Tu3I.3 DD solutions for 100G and beyond
@@ -195,12 +204,41 @@ icon: icon-apache
         - 2 tap post filter
         - to compensate for the equalization-enhanced in-band noise
         
-
+### Th5B.6 PDP 218 Gbs single wavelength single pol single PD transmission over 125 km of ssmf using kk detection 
+- X.Chen Bell Labs US
+- DCI nneds interface rates beyond 50 Gb/s
+- State-of-art
+    - VCSELs + PAM w/o pre-emphasis and rx DSP - **112 Gb/s**
+    - DMT with optimized bit loading, @ 1305 nm, EML(electro-absorption modulated laser) + 1 PD - **net 250 Gb/s (line rate 300 Gb/s), 10 km**
+    - SSB DMT @ 1550 nm - **114 Gb/s 80 km**
+    - SVDD by Osman - **360 Gb.s**
+- Experiment setup 
+    - 1550 nm
+    - Tx: IQ mod fed by 2 DACs(80 Gsa/s, ~7dB roll-off at 30 GHz)
+        - IQ biased at transmission null
+        - DMT with 768 subcarriers
+            - 128 (from lowest freq to 10 GHz) loaded with QPSK
+            - 640 (10 GHz to 60 GHz) loaded with 16QAM
+            - DC SC unloaded
+        - FFT size 1024
+        - 0.7% overhead (8 Samples) as guard interval
+        - line rate: 218 Gb/s = (2 bits * 128/1024 + 4 bits * 640/1024)/1.007 * 80 Gsa/s
+        - B/2 shifted RF tone generated optically to vary and optimize CSPR more easily - sinusoidally driven LiNbO3 SSBed modulator 
+            - can be generated electronically and combined to DMT prior to IQ modulation 
+    - Rx: PD + ADC + offline DSP
+        - PD 3 dB bw of 100 GHz
+        - single channel of a 63 GHz RTO as ADC
+        - odd-indexed DMT scs loaded with signals while even-indexed scs are not, thus ssbn falls on even bins - to confirm whether KK removes SSBN        
+        
+---
 # Coherent Detection
 ## Probability Shaping
 ### M3C.1 Spectrally-Efficient Single-Carrier 400G Transmission with PS
 - Yanjun Zhu -Futurewei Tech, Santa Clara, USA
-- 
+- PS 64QAM single Carrier
+- 50 GHz grid
+- up to 300% reach enhancement
+- excellent noise tolerance
 
 
 
