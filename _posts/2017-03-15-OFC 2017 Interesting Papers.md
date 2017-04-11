@@ -229,6 +229,8 @@ icon: icon-apache
         - PD 3 dB bw of 100 GHz
         - single channel of a 63 GHz RTO as ADC
         - odd-indexed DMT scs loaded with signals while even-indexed scs are not, thus ssbn falls on even bins - to confirm whether KK removes SSBN        
+
+ 
         
 ---
 # Coherent Detection
