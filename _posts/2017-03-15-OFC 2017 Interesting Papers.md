@@ -167,6 +167,18 @@ icon: icon-apache
                     - 110 Gbps 100 km VSB-DMT
 
 ## IMDD + SSB
+### Tu2D.2 Single-Lane 180 Gb/s SSB-DB-PAM4 transmission over 13 km SSMF
+- Huawei Germany
+- 90 GBaud, net data rate 150 Gbit/s over 13 km, 168 Gbits/ over 4 km
+- 92 Gsa/s DAC, 160 Gsa/s DSO as ADC
+- Dual drive MZM used as **IQ**
+- Duobinary + Hilbert to make SSB(not VSB) + CDC at Tx side 
+    - DB reduces BW requirement 
+    - SSB doubles SE for PAM4 (Hermitian) in WDM ?
+    - 17 dB SPR(side band suppression ratio) at 0.1 nm away from central wavelength
+- one PD, TR + FFE + MLSE_k at Rx side
+
+
 ### Tu2D.5 Nonlinear Equalizaer for 112-Gb SSB-PAM4 in 80 km CD uncompensated link
 - Bell Labs - Noriaki Kaneda
 - IMDD + SSB + PD 
@@ -182,6 +194,18 @@ icon: icon-apache
         - scales well if disp is high and # of linear and NL terms increase 
     - an order of magnitude better in terms of BER comparing to Linear Eq only
     - 96 taps for Linear part, 48 taps 
+
+### Tu3D.3 50 Gbs PDM-DMT-SSB Transmission over 40 km SSMF using single PD in C band
+- USTB (University of Science & Technology Beijing) 
+- 3.8e-3 BER at rx sensitivity of -7 dBm without optical amplifier or CD compensation
+- Tx
+    - DMT/OFDM -> CD tolerant, SSB -> relieve power fading 
+    - X-pol SSB OFDM (modulated on to E field), using guard band to avoid SSBI cancellation - IQ
+    - Y-pol DMT at lower frequency (modulated onto intensity) - use the guard band to improve SE - IM
+- Rx
+    - filter out OFDM, demodulate it
+    - esitimate SSBI, subtract from DMT, demodulate DMT
+
 
 ### Tu3I.2 4x200 Gbs Twin-SSB Nyquist SCM WDM Transmission over 160 km SSMF with DD
 - Peking University, Yixiao Zhu
@@ -203,6 +227,33 @@ icon: icon-apache
     - post filter + MLSD
         - 2 tap post filter
         - to compensate for the equalization-enhanced in-band noise
+
+### Tu3I.4 112 Gb/lambda WDM DD Nyquist-SCM Transmission at 3.15 b/s/Hz over 240 km SSMF enabled by novel beating interference compensation
+- UCL, Z.Li, R.I.Killey
+- 35 GHz spaced 4x112 Gbs WDM SSB 16-QAM Nyquist SCM DD - 3.15 b/s/Hz net optical ISD (information spectral density) 
+    - Not OFDM - lower PSPR
+    - only 1 SC used, 4 WL WDM
+- Tx side
+    - dispersion precompensation and SSB implementation using IQ mod
+    - DAC: AWG x2 at 92 Gsa/s, 33 GHz 3dB BW
+    - 28 GBaud SSB 16QAM SCM signal, RRC with 0.01 roll-off, up-converted to 14.28GHz (0.5*symbol rate) then made SSB digitally
+    - optimum CSPR used (OSNR dependent)
+        - OSNR taking into consideration the carrier power as part of signal power
+- both straight-line multiple span fiber link (EDFA with 5dB noise figure after 80 km) and repeater less fiber links with extended spans of 120 and 160 km (w/o mid-span amplification) are used 
+- Rx side
+    - 30 GHz 3dB BW OBPF for demux
+    - ADC at 80 Gsa/s
+    - 2 stage linearization filter 
+        - stage 1 - compensating SSBI
+            - I->side band filter->S 
+            - X = S + |S|^2*n1
+        - stage 2 - removing signal-SSBI beating from stage 1
+            - X->side band filter->s
+            - |s|^2 -> side band filter ->x
+            - real[x*conj(s)]*n2+s
+        - n1 and n2 are scaling factors
+- 240 km multispan link 1.6 e-3 average BER for all channel
+- 160 km extended reach single span 1.3e-2 BER
         
 ### Th5B.6 PDP 218 Gbs single wavelength single pol single PD transmission over 125 km of ssmf using kk detection 
 - X.Chen Bell Labs US
@@ -230,8 +281,8 @@ icon: icon-apache
         - single channel of a 63 GHz RTO as ADC
         - odd-indexed DMT scs loaded with signals while even-indexed scs are not, thus ssbn falls on even bins - to confirm whether KK removes SSBN        
 
- 
-        
+
+
 ---
 # Coherent Detection
 ## Probability Shaping
