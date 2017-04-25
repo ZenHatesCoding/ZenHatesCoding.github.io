@@ -254,6 +254,19 @@ icon: icon-apache
         - n1 and n2 are scaling factors
 - 240 km multispan link 1.6 e-3 average BER for all channel
 - 160 km extended reach single span 1.3e-2 BER
+
+### Tu3I.5 KK PAM tranceiver
+- C.Antonelli, A.Mecozzi Uof L'Aquila Italy
+- computation of logarithm requires up-sampling by 2 to three
+- no need for addition CPR
+- not self-heterdyne or standard SSB, bias is not used as a carrier which requires large CSPR
+    - |u(t)|<1 original signal must be non-negative
+
+
+### Th3D.2 Perforance Improvement of Electronic disperision post-compensation in DD system using DSP based Rx linearization
+- Z.Li UCL
+- Same algorithm as Tu3I.4
+- Precompensation at Tx + SSBI cancellation at Rx and SSBI cancellation + CD compensation at Rx have similar performances as long as SSBI is efficiently mitigated.
         
 ### Th5B.6 PDP 218 Gbs single wavelength single pol single PD transmission over 125 km of ssmf using kk detection 
 - X.Chen Bell Labs US
@@ -282,7 +295,10 @@ icon: icon-apache
         - odd-indexed DMT scs loaded with signals while even-indexed scs are not, thus ssbn falls on even bins - to confirm whether KK removes SSBN        
 
 
-
+### List of ideas
+- **W4D.3** Real Time 200G (4x56.25Gb/s) PAM4-transmission over 80 km SSMF using QD laser and Si Ring MOD
+    - ADVA Germany, DTU Denmark, Ranovus Canada
+    - using DCF + 2 EDFA
 ---
 # Coherent Detection
 ## Probability Shaping
