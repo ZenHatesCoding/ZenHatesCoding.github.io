@@ -98,7 +98,11 @@ icon: icon-apache
     - See their OE-16 paper for details
     - RAMZI, sub GHz resolution, flat top
         - _comparing to cascaded ring ?_
-
+- **M3H.2** 64 Gbits PAM4 20 km Transmission using SiP MRM
+    - Yung Hsu, Taiwan
+    - for TDM-PON
+    - 64 split ratio
+    - volterra-filtering as equalizer
 
 ## Packaging
 
@@ -299,6 +303,9 @@ icon: icon-apache
 - **W4D.3** Real Time 200G (4x56.25Gb/s) PAM4-transmission over 80 km SSMF using QD laser and Si Ring MOD
     - ADVA Germany, DTU Denmark, Ranovus Canada
     - using DCF + 2 EDFA
+
+
+
 ---
 # Coherent Detection
 ## Probability Shaping
@@ -310,9 +317,16 @@ icon: icon-apache
 - excellent noise tolerance
 
 
+### list of ideas
 
-
-
+- **Tu3D.7** Gaussian Process Regression for WDM system Performance Prediction
+    - DTU Jesper Wass
+    - GPR model ML
+        - features:
+            - Experiment: launched power + channel spacing
+            - simulation: launched power + channel spacing + Baud Rate + # span
+        - target: BER
+    - models trained from simulation data can be applied to experimental data
 
 
 
