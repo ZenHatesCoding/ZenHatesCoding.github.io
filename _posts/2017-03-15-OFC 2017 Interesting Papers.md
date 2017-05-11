@@ -317,7 +317,7 @@ icon: icon-apache
 - excellent noise tolerance
 
 
-### list of ideas
+## list of ideas
 
 - **Tu3D.7** Gaussian Process Regression for WDM system Performance Prediction
     - DTU Jesper Wass
@@ -328,11 +328,64 @@ icon: icon-apache
         - target: BER
     - models trained from simulation data can be applied to experimental data
 
+# Machine Learning
+### Th1J.1 QoT Estimation for Unestablished lightpaths using ML
+- Luca B. Politecnico di Milano Italy
+- trained and tested using synthetic data (Frome BER Estimation Tool)
+- random forest (RF) classifier with 100 estimators
+- application: real time prediction of QoT prior to deployment for optimal design / planning of Opt network
+    - scalable to large network topologies
+    - scalable to dynamic operations
+- design parameters (potential features):
+    - FEC, single/multi carrier, NL mitigation solutions, adaptive channel spacing, flex-grid
+    - lightpath route, spectrum, modulation format, baud rate
+- ML based **classifier** to predict the probability that the BER will exceed the system tolerance threshold or not.
+    - features: # of links, total length, longest link length, traffic volume, mod format
+        - offset & rescale to have a 0 mean and 1 standarad deviation
+    - Target: binary BER > 4x10^-3 or not
+        - output: estimated probabilty that the instance belongs to the positive class
+        - repeat the BER calculation 100 times to obtain a statistical estimation
+    - identical features will result in different BER (not determinstic)
+    - performance evaluation: accuracy + area under ROC curve (AUC)
 
+### Th1J.2 Dynamic Power Pre-adjustments with ML that mitigate EDFA Excursions during defragmentation
+- Yishen Huang et al Columbia, Bergman
+- Application scenario:
+    - flexgrid networks, spectral defragmentation to adjust channel WLs assignment and re-groom contiguous bandwidths
+    - power excursion in EDFA may result in post-EDFA power instability
+- 3 defragmentation methods
+    - Hop: establish new channel and drop the original one simultaneously
+    - Make-before-Break(MbB), new channel is createdm allowing the traffic to be re-established before dropping
+    - Sweep: the channel WLs is shifted gradually at the spectral granularity withou disruption of the traffic
+    - Each method induces a unique power impact on EDFA
+- Selling point:
+    - characterize the channel-dependence of power excursions for 3 methods using ML
+        - undesired power excursions: increase in the discrepancy of post-EDFA channel powers
+        - 2 metrics: magnitude + correlation
+            - both metrics can be characterized for cascaded EDFAs with low-complexity ML regression and classification models
+            - magnitude: contribution of each spectral granularity to the post-EDFA discrepancy
+                - Ridge Regression (RR) model
+                - all channels have the same pre-EDFA power
+                - 0.004 MSE
+            - correlation: rise in a channel's pre-EDFA power may increase/decrease the post-EDFA discrepancy
+                - Logistic Regression (LR) model
+                - 98% accuracy
+        - 800 training scenarios + 200 testing scenarios with randomly inticiated ON/OFF channels  
+    - adaptive strategy for automatic power adjustments 
+        - ML models incorporated to determine the adaptive pre-EDFA power adjustments for newly established super-channel
+        - pre-adjustment of pre-EDFA power, similar to pre-comp of CD\
+        - ML models are static rather than adaptive
+        - 3 algorithms for 3 methods
+        - over 62 % improvement (mitigation of post-EDFA power discrepancy)
 
-
-
-
+### W3J.2 NL inter-Subcarrier Intermixing Reduction in Coherent OFDM using Fast Machine Learning Equalization
+- E. Giacoumidis U of Sydney
+- Newton support vector machine (N-SVM) based NLE
+- 40 Gb/s 16-QAM Coherent-OFDM 
+    - tolerant to CD and PMD
+    - high PAPR - NL crosstalks like inter-SC XPM and FWM - stochastic-like
+- at 2000 km N-SVM extends launced optical power by 2dB compared to Volterra-based NLE
+- _I didn't read about the algorithm_
 
 <style>
 .page-container {max-width: 1000px}
