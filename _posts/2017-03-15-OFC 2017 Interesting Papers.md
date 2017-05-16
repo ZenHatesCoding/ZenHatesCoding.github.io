@@ -317,18 +317,20 @@ icon: icon-apache
 - excellent noise tolerance
 
 
-## list of ideas
 
-- **Tu3D.7** Gaussian Process Regression for WDM system Performance Prediction
-    - DTU Jesper Wass
-    - GPR model ML
-        - features:
-            - Experiment: launched power + channel spacing
-            - simulation: launched power + channel spacing + Baud Rate + # span
-        - target: BER
-    - models trained from simulation data can be applied to experimental data
+
 
 # Machine Learning
+
+### Tu3D.7 Gaussian Process Regression for WDM system Performance Prediction
+- DTU Jesper Wass (D.Zibar Group)
+- GPR (Gaussian Process Nonlinear Regression) model ML - Gaussian Kernel (like SVM) instead linear kernel in a linear regression algorithm
+    - features:
+        - Experiment: launched power + channel spacing
+        - simulation: launched power + channel spacing + Baud Rate + # span
+    - target: BER
+- models trained from simulation data can be applied to experimental data
+
 ### Th1J.1 QoT Estimation for Unestablished lightpaths using ML
 - Luca B. Politecnico di Milano Italy
 - trained and tested using synthetic data (Frome BER Estimation Tool)
@@ -378,6 +380,17 @@ icon: icon-apache
         - 3 algorithms for 3 methods
         - over 62 % improvement (mitigation of post-EDFA power discrepancy)
 
+### Th1J.4 Accurate Prediction of Quality of Transmission with Dynamically Configurable Optical Impairment Model
+- Martin Bouda, Fujitsu Lab of America
+- Optical Impairment model
+    - enable physical layer abstraction and physical parameters learning in multi-vendor networks
+    - both linear and NL effects
+    - dynamically configured on-the-fly to account for changes
+- application: reduce optical margin through higher accuracy of Q prediction
+    - 0.6 dB Q-factor accuary achieved
+
+
+
 ### W3J.2 NL inter-Subcarrier Intermixing Reduction in Coherent OFDM using Fast Machine Learning Equalization
 - E. Giacoumidis U of Sydney
 - Newton support vector machine (N-SVM) based NLE
@@ -385,7 +398,9 @@ icon: icon-apache
     - tolerant to CD and PMD
     - high PAPR - NL crosstalks like inter-SC XPM and FWM - stochastic-like
 - at 2000 km N-SVM extends launced optical power by 2dB compared to Volterra-based NLE
-- _I didn't read about the algorithm_
+- _I didn't read about the algorithm carefully_
+    - need 5 to 8 iterations
+    - using 2-norm error minimization instead of margin maximization, can this still be regarded SVM ?
 
 <style>
 .page-container {max-width: 1000px}
