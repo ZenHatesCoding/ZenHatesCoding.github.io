@@ -320,7 +320,7 @@ icon: icon-apache
 
 
 
-# Machine Learning
+# Machine Learning & Data Analysis
 
 ### Tu3D.7 Gaussian Process Regression for WDM system Performance Prediction
 - DTU Jesper Wass (D.Zibar Group)
@@ -383,12 +383,24 @@ icon: icon-apache
 ### Th1J.4 Accurate Prediction of Quality of Transmission with Dynamically Configurable Optical Impairment Model
 - Martin Bouda, Fujitsu Lab of America
 - Optical Impairment model
-    - enable physical layer abstraction and physical parameters learning in multi-vendor networks
+    - enable physical layer abstraction and physical parameters learning in **multi-vendor** networks
     - both linear and NL effects
     - dynamically configured on-the-fly to account for changes
+- control and management architecture
+    - separate network control func and optical connection func
+    - outerloop dealing with network resources allocation (like Route and WL)
+    - inner loop dealing with parameters (like NF, NL coef and etc.) learning - to improve the model
+- block model - physical layer abstraction
+    - EDFA: compute noise density based on gain, freq, spontaneous emission factor/NF
+    - fiber: GN model, avoid numerical integration by computing an intermediate NL noise relation for each fiber type
+    - RxL compute symbol electrical SNR based on accumulated linear noise density and NL optical noise 
+- **learning procedure**
+    - Maximum likelihood 
 - application: reduce optical margin through higher accuracy of Q prediction
     - 0.6 dB Q-factor accuary achieved
+    - no longer depend on # of span
 
+### Th1J.7
 
 
 ### W3J.2 NL inter-Subcarrier Intermixing Reduction in Coherent OFDM using Fast Machine Learning Equalization
@@ -401,6 +413,34 @@ icon: icon-apache
 - _I didn't read about the algorithm carefully_
     - need 5 to 8 iterations
     - using 2-norm error minimization instead of margin maximization, can this still be regarded SVM ?
+
+### List of Ideas
+- **Th1J.5** Investigation of Optical Impacts on Virtualization using SDN-enabled Tx and Optical Monitoring
+    - Y.Ou, U of Bristol
+    - V-BVT introduces physical Tx as an abstracted object to control plane
+    - variations in underlying optical network substrate will affect VON perfomrances
+    - Including real-time optical layer monitoring into optical virtulization strategy, enabling monitored data as supplemented inputs in creating virtual Txs
+        - The status of V-BVT resources
+            - in-band channel  OSNR and utilization per link (optical link status)
+            - extinction ratio of subcarriers
+        - Rx performance
+            - Rx OSNR and BER
+        - V-BVT (re)-configuration duration
+    - algorithm not described
+
+- **Th1J.7** A Bayesian-based Approach for Virtual Network Reconfiguration in Elastic Optical Path Networks
+    - Toshihiko Ohba, Osaka U, Japan
+    - memorize a set of "good" VNs, retrieve one of the VNs suitable for new situation
+    - doesn't need traffic demand matrix, but use the amounts of outgoing/incoming traffic at edge routers as traffic information
+    - 3 challenges
+        - how to identify the traffic situation from easily available situation
+            - **Bayesian inference**
+        - how to reconfigure a VN when VN is not adequate though identification succeeds
+            - apply noise-induced control
+        - how to reconfigure a VN when identification fails 
+            - didn't cover this case in this paper
+    - The proposed Bayesian-based method is more stable against traffic fluctuation comparing to conventional noised-induced method
+            
 
 <style>
 .page-container {max-width: 1000px}
