@@ -400,7 +400,6 @@ icon: icon-apache
     - 0.6 dB Q-factor accuary achieved
     - no longer depend on # of span
 
-### Th1J.7
 
 
 ### W3J.2 NL inter-Subcarrier Intermixing Reduction in Coherent OFDM using Fast Machine Learning Equalization
