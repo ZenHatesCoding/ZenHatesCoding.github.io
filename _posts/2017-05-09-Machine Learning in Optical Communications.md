@@ -147,7 +147,7 @@ icon: icon-apache
                 - |a|^2 + |b|^2 = 1, a, b \in Complex
                 - requires 4 parameters: phase of a and b, theta, ratio of |a| and |b|
             - More then 1 MZI is required to achieve a unitary matrix
-            - rank N unitary matrix can be decomposed into sets of SU(2) rotations - [__Reck propsal__][r1]
+            - rank N unitary matrix can be decomposed into sets of SU(2) rotations - [__Reck propsal__](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.73.58)
     - Sigma
         - attenuator
             - each output connected to an MZI
@@ -155,10 +155,6 @@ icon: icon-apache
             - Sigma_ii = sin(theta/2)
 
 
-
-
-
-[r1]:(https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.73.58)
 
 <style>
 .page-container {max-width: 1000px}
