@@ -103,7 +103,63 @@ icon: icon-apache
     - laser phase noise from tx and LO
     - NL pahse noise (NLPN) - interaction between signal and ASE via Kerr effect  
 - comment: useless
-  
+
+
+# Implementing ML (ANN) 
+## ONN
+### Deep learning with coherent nanophotonic circuits
+- MIT Yichen Shen, Marin Soljačić
+- Nature Photonics  2017
+- General
+    - input signal, parallel pulses
+    - training done off-line (using CPU), a novel way of implementing forward propagation
+    - ALso enables a new training method: instead of backpropagation, using 2 forward propagations to estimate the gradients
+    - resetting parameters (trainning) consumes power, **the selling point** is: except for the power consumed by thermal heater, Ideally forward propagation should be passive - new phase shifting materials required
+    - **OPSIS foundary**
+    - limits:
+        - #MZI not enough - one path only achieve U x Sigma, cannot do full SVD
+            - the chip was designed for quantum optics
+            - iteration required
+        - activation func simulated using CPU - not applying real saturable absorber
+        - space required is way larger than electric circuits
+        - Sigma achieved using attenuators - IL large - scalability may be limited
+        - mentioned in their paper:
+            - thermal crosstalk between phase shifters in interferometers, 
+            - optical coupling drift
+            - the finite precision with which an optical phase canbe set (16 bits)
+            - photodetection noise and 
+            - finite photodetection dynamic range (30 dB)
+- Dealing with Matrix Multiplication
+    - SVD: M = U x Sigma x V*; U, V are unitary
+    - Using cascaded MZI to achieve U,V
+        - 56 MZI used
+        - thermal tuning required
+            - internal phase - splitting ratio
+            - external phase - output phase relation
+            - ~10 mW per phase modulator
+        - MZI: 
+            - 0.5[ [ exp(i*phi)(exp(i*theta-1), iexp(i*phi)(exp(i*theta)+1) ];
+                 [ i(1+exp(i*theta)), 1-exp(i*theta) ] ] 
+                 is unitary
+            - has 2 parameters: theta and phi
+            - Unitary Matrix (2x2)
+                -[ [ a,b]; [-exp(i*theta)b*,  exp(i*theta)*a*]]
+                - |a|^2 + |b|^2 = 1, a, b \in Complex
+                - requires 4 parameters: phase of a and b, theta, ratio of |a| and |b|
+            - More then 1 MZI is required to achieve a unitary matrix
+            - rank N unitary matrix can be decomposed into sets of SU(2) rotations - [__Reck propsal__][r1]
+    - Sigma
+        - attenuator
+            - each output connected to an MZI
+            - using MZI to rotate the light to untracked mode
+            - Sigma_ii = sin(theta/2)
+
+
+
+
+
+[r1]:(https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.73.58)
+
 <style>
 .page-container {max-width: 1000px}
 </style>
