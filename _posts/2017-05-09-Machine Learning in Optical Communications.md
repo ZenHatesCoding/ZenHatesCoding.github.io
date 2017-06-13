@@ -147,7 +147,7 @@ icon: icon-apache
                 - |a|^2 + |b|^2 = 1, a, b \in Complex
                 - requires 4 parameters: phase of a and b, theta, ratio of |a| and |b|
             - More then 1 MZI is required to achieve a unitary matrix
-            - rank N unitary matrix can be decomposed into sets of SU(2) rotations - [__Reck propsal__](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.73.58)
+            - rank N unitary matrix can be decomposed into sets of SU(2) rotations - [Reck propsal](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.73.58)
     - Sigma
         - attenuator
             - each output connected to an MZI
