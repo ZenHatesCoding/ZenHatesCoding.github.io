@@ -158,7 +158,7 @@ icon: icon-apache
 
 
 
-[r1]:(https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.73.58)
+[r1]:(https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.73.58)
 
 <style>
 .page-container {max-width: 1000px}
